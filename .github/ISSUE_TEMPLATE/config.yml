@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a vulnerability privately
+    url: https://github.com/gleniosp/robotops/security/advisories/new
+    about: Send a confidential report to maintainers. Do not use public issues for vulnerabilities.
+  - name: Getting started and contributing
+    url: https://github.com/gleniosp/robotops/blob/main/docs/guides/getting-started.md
+    about: Understand the current project, set up a checkout, and find a way to contribute.

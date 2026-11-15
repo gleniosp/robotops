@@ -1,0 +1,23 @@
+name: Feature proposal
+description: Suggest an improvement to the product, tooling, or documentation.
+body:
+  - type: markdown
+    attributes:
+      value: Search existing issues first. For vulnerabilities, use [private security reporting](https://github.com/gleniosp/robotops/security/advisories/new).
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Who encounters it, and what are they trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What change would help?
+      description: Describe the desired result. A complete implementation plan is optional.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or related work
+      description: Existing workarounds, related issues, or examples, if any.
