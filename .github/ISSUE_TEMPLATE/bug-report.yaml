@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a problem with the current code, tooling, or documentation.
+body:
+  - type: markdown
+    attributes:
+      value: Search existing issues first. For vulnerabilities, use [private security reporting](https://github.com/gleniosp/robotops/security/advisories/new). Keep secrets and personal data out of this form.
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Include the smallest example, commands, or document path.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Relevant environment details, sanitized output, or screenshots.

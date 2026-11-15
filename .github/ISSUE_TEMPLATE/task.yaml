@@ -1,0 +1,26 @@
+name: Task
+description: Plan a focused implementation, documentation, or investigation task.
+body:
+  - type: markdown
+    attributes:
+      value: Use a feature proposal if the change still needs discussion. For vulnerabilities, use [private security reporting](https://github.com/gleniosp/robotops/security/advisories/new).
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome and scope
+      description: What should this task deliver?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable results, including relevant checks and documentation.
+      placeholder: "- [ ] Expected result"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link prerequisite issues or relevant context, if any.

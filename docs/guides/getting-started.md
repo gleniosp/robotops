@@ -70,17 +70,23 @@ For the configuration and its current limits, read the
 
 ## Find a place to contribute
 
-Start with the [open issues](https://github.com/gleniosp/robotops/issues) to see
-planned work and dependencies. Search before reporting a bug or proposing a
-change. Describe the problem, expected behavior, and a small reproduction where
-possible. Discuss substantial changes with the maintainer before implementing
-them.
+Start with the [issue chooser](https://github.com/gleniosp/robotops/issues/new/choose)
+to report a bug, propose a feature, or plan a task. Search existing issues first.
+Discuss substantial changes with the maintainer before implementing them.
 
 For an agreed task, follow the [working agreement](../working-agreement.md) for
 branch names, local review, commits, and pull requests. Include relevant checks
 and update the guides when a change affects what someone can do. The maintainer
-reviews and merges contributions. A dedicated public contribution guide and PR
-checks are planned in [issue #4](https://github.com/gleniosp/robotops/issues/4).
+reviews and merges contributions. All contributions go through a pull request
+to `main`. The PR template asks for the change, related
+issue, and checks run. A dedicated public contribution guide is planned in
+[issue #4](https://github.com/gleniosp/robotops/issues/4).
+
+PRs targeting `main` run **PR checks / Repository checks**.
+The workflow installs the declared Node and pnpm versions, then runs the checks,
+tests, and Lambda example commands shown above. It uses read-only repository
+permissions and does not deploy to AWS. See failures in the Actions logs; a
+maintainer may need to approve a first-time contributor's workflow run.
 
 Read the [security policy](../../SECURITY.md) before reporting a vulnerability and
 the [code of conduct](../../CODE_OF_CONDUCT.md) for participation expectations.

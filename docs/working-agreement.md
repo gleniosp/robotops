@@ -30,6 +30,8 @@ explain, and keep decision-relevant findings short in the relevant ADR.
 
 ## Review and publication
 
+All contributions reach `main` through a pull request.
+
 Leave implementation changes available for local review. Implementation does not
 authorize staging, commits, pushing, PR creation, deployment, or merge. Existing
 explicit authorization persists for its agreed scope.
