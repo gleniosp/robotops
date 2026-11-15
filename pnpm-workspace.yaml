@@ -1,0 +1,10 @@
+packages: []
+minimumReleaseAge: 10080
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false
+saveExact: true
+engineStrict: true
+allowBuilds:
+  esbuild: true
+runtimeOnFail: ignore
+pmOnFail: ignore
