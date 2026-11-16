@@ -11,7 +11,7 @@ const stack = new Stack(app, "ToolchainFixture", {
   env: { account: "111111111111", region: "eu-central-1" },
 });
 new NodejsFunction(stack, "Boundary", {
-  entry: "tests/toolchain/handler.ts",
+  entry: "apps/api/src/handler.ts",
   handler: "handler",
   runtime: lambda.Runtime.NODEJS_24_X,
   architecture: lambda.Architecture.X86_64,

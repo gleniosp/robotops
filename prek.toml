@@ -1,0 +1,35 @@
+minimum_prek_version = "0.5.10"
+default_install_hook_types = ["pre-commit"]
+default_stages = ["pre-commit", "manual"]
+
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "check-case-conflict", priority = 10 },
+  { id = "check-merge-conflict", priority = 10 },
+  { id = "check-added-large-files", priority = 10, args = [
+    "--maxkb=1024",
+  ] },
+]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "fix"
+name = "Fix repository formatting and lint"
+language = "system"
+entry = "pnpm run fix"
+always_run = true
+pass_filenames = false
+stages = ["pre-commit"]
+priority = 0
+
+[[repos.hooks]]
+id = "check"
+name = "Check repository formatting, lint, types and documentation"
+language = "system"
+entry = "pnpm run check"
+always_run = true
+pass_filenames = false
+priority = 20

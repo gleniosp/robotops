@@ -1,4 +1,5 @@
-import { Context, Data, Effect, Layer, Schema } from "effect";
+import { Context, Data, Effect, Layer } from "effect";
+import { BucketRequest } from "@robotops/contracts";
 import { ListBucketsCommand, S3Client } from "@aws-sdk/client-s3";
 
 export class StorageFailure extends Data.TaggedError("StorageFailure")<{
@@ -24,10 +25,9 @@ export const bucketReaderLayer = (client: Pick<S3Client, "send">) =>
     }),
   });
 
-const Request = Schema.Struct({ prefix: Schema.String });
 export const listMatching = (input: unknown) =>
   Effect.gen(function* () {
-    const request = yield* Schema.decodeUnknownEffect(Request)(input);
+    const request = yield* BucketRequest.decode(input);
     const reader = yield* BucketReader;
     const buckets = yield* reader.read;
     return buckets.filter((name) => name.startsWith(request.prefix));

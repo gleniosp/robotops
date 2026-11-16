@@ -19,3 +19,9 @@ it enabled. Recheck this exception when upgrading CDK.
 
 Vite+ reports a Vite peer warning for its aliased core; its bundled test runner
 works with the current fixture. Keep the upstream tool pair together on upgrades.
+
+Use npm-installed prek for repository hooks and dprint for Markdown and configuration
+formats. This scopes a second formatter to files
+excluded from Vite+ formatting; Vite+ retains source formatting, lint, types and tests.
+Pin the dprint Oxc WASM plugin with a checksum and disable embedded code formatting.
+Install Git hooks explicitly, and keep CI secret scanning independent of local hooks.

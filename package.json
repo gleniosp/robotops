@@ -4,20 +4,28 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "check": "vp check && tsc --noEmit && tsc --noEmit -p tests/toolchain/cdk/tsconfig.json",
-    "fix": "vp check --fix",
+    "check": "vp check && dprint check && pnpm run typecheck && pnpm run docs:check && prek validate-config prek.toml",
+    "fix": "pnpm run format && vp check --fix --no-fmt",
     "test": "vp test run",
-    "toolchain:bundle": "node tests/toolchain/cdk/synth.ts",
-    "toolchain:import": "node tests/toolchain/import.ts"
+    "toolchain:bundle": "node infra/cdk/synth.ts",
+    "toolchain:import": "node tests/toolchain/import.ts",
+    "format": "vp fmt && dprint fmt",
+    "format:check": "vp fmt --check && dprint check",
+    "lint": "vp lint",
+    "typecheck": "tsc --noEmit && pnpm -r run typecheck",
+    "docs:check": "node scripts/check-docs.ts",
+    "security:dependencies": "pnpm audit --audit-level=high",
+    "hooks:check": "prek run --all-files --stage manual",
+    "hooks:install": "prek install",
+    "hooks:fix": "prek run --all-files --stage pre-commit"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "3.1164.0",
     "effect": "4.1.2"
   },
   "devDependencies": {
+    "@j178/prek": "0.5.10",
     "@types/node": "24.19.2",
-    "aws-cdk-lib": "2.275.0",
-    "constructs": "10.8.1",
+    "dprint": "0.64.3",
     "esbuild": "0.28.2",
     "typescript": "7.0.2",
     "vite-plus": "1.5.0"
