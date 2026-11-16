@@ -1,5 +1,4 @@
-import { Schema } from "effect";
-
-// Toolchain example only; product contracts are owned by issue #5.
-const Request = Schema.Struct({ prefix: Schema.String });
-export const BucketRequest = { decode: Schema.decodeUnknownEffect(Request) };
+export * from "./primitives.ts";
+export * from "./domain.ts";
+export * from "./telemetry.ts";
+export * from "./api.ts";
