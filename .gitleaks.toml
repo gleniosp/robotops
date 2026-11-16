@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Dependencies and generated output"
+paths = [
+  '''(^|/)node_modules/''',
+  '''(^|/)\.toolchain-out/''',
+  '''(^|/)cdk\.out/''',
+  '''(^|/)coverage/''',
+  '''(^|/)dist/''',
+]
