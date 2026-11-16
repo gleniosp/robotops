@@ -35,6 +35,24 @@ This installs the required project-local Vite+ along with the other development
 dependencies. The project commands use that local copy, so a global Vite+
 installation is not required. You do not need an AWS account or Docker for this guide.
 
+To enable the repository pre-commit checks for this checkout, run:
+
+```sh
+pnpm run hooks:install
+```
+
+This installs a Git hook using the project-local prek. Before a commit it applies
+formatting and available lint fixes, then runs repository checks. If files change,
+the commit stops so you can review and stage the fixes before retrying. Remaining
+validation failures also block the commit. Fixes are never staged automatically.
+Installation is explicit; dependency installation does not change Git hooks.
+
+If you use VS Code, install the workspace recommendations: the Vite+ extension
+pack (which includes Oxc and Vitest), dprint, and EditorConfig. The workspace settings
+use the local dprint binary for Markdown and configuration files and Oxc for
+TypeScript and JavaScript. Both format on save. EditorConfig supplies basic
+whitespace settings for text files without a dedicated formatter.
+
 ## Check that the foundation works
 
 ```sh
@@ -74,19 +92,8 @@ Start with the [issue chooser](https://github.com/gleniosp/robotops/issues/new/c
 to report a bug, propose a feature, or plan a task. Search existing issues first.
 Discuss substantial changes with the maintainer before implementing them.
 
-For an agreed task, follow the [working agreement](../working-agreement.md) for
-branch names, local review, commits, and pull requests. Include relevant checks
-and update the guides when a change affects what someone can do. The maintainer
-reviews and merges contributions. All contributions go through a pull request
-to `main`. The PR template asks for the change, related
-issue, and checks run. A dedicated public contribution guide is planned in
-[issue #4](https://github.com/gleniosp/robotops/issues/4).
-
-PRs targeting `main` run **PR checks / Repository checks**.
-The workflow installs the declared Node and pnpm versions, then runs the checks,
-tests, and Lambda example commands shown above. It uses read-only repository
-permissions and does not deploy to AWS. See failures in the Actions logs; a
-maintainer may need to approve a first-time contributor's workflow run.
+Read [CONTRIBUTING.md](../../CONTRIBUTING.md) for the contribution workflow and
+[testing guidance](testing.md) for all local and CI checks.
 
 Read the [security policy](../../SECURITY.md) before reporting a vulnerability and
 the [code of conduct](../../CODE_OF_CONDUCT.md) for participation expectations.

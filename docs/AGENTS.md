@@ -9,6 +9,7 @@
 - Give each topic one canonical home. Link to that home instead of repeating explanations, commands, or policies across files or within a file.
 - Review the main README for repeated sections and links. Give each audience a direct next step; avoid link chains, circular navigation, and multiple links to the same topic on one page.
 - Create a separate document only when it has a distinct purpose or consolidates substantial shared information. Do not add index files for a single document.
+- Keep AGENTS.md files as short as practical without losing required instructions; there is no fixed line limit.
 - Add scoped AGENTS.md files only for instructions that differ from parent guidance. A folder README is enough for purpose, entry points, and usage.
 - Keep setup and current commands in the relevant guide. Manifests, runtime pins, and lockfiles own exact versions; do not copy version inventories into prose.
 - Do not write journals or retain installation logs and routine validation evidence.

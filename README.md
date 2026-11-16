@@ -51,6 +51,8 @@ planning, and safety-critical operation are outside the initial scope.
 
 ## Community and license
 
+Read [CONTRIBUTING.md](CONTRIBUTING.md) to work on an issue and prepare a contribution.
+
 Read the [security policy](SECURITY.md) before reporting a vulnerability and the
 [code of conduct](CODE_OF_CONDUCT.md) for participation expectations.
 
