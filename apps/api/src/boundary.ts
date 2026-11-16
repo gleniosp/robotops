@@ -1,5 +1,5 @@
 import { Context, Data, Effect, Layer } from "effect";
-import { BucketRequest } from "@robotops/contracts";
+import { BucketRequest } from "@robotops/contracts/toolchain-fixture";
 import { ListBucketsCommand, S3Client } from "@aws-sdk/client-s3";
 
 export class StorageFailure extends Data.TaggedError("StorageFailure")<{

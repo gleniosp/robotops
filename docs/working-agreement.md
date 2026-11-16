@@ -19,6 +19,9 @@ unstaged, and untracked work before editing. Preserve unrelated changes.
 Normally one issue and PR deliver one independently reviewable behavior. Read
 its contracts and applicable AGENTS instructions, implement its agreed scope,
 and run the relevant checks from [the toolchain guide](reference/toolchain.md).
+For shared schema changes, follow [schema evolution](guides/schema-evolution.md)
+and record compatibility, affected consumers, versioning/migrations and relevant
+compatibility tests in the issue or PR.
 Keep fixing commands separate from read-only checks; never automatically stage
 formatter changes. Include essential failure handling, configuration, and docs.
 
