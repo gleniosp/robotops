@@ -7,7 +7,12 @@ export default defineConfig({
     overrides: [{ files: ["apps/api/**", "infra/cdk/**", "scripts/**"], env: { node: true } }],
   },
   test: {
-    include: ["apps/**/*.test.ts", "packages/**/*.test.ts", "scripts/**/*.test.ts"],
+    include: [
+      "apps/**/*.test.ts",
+      "packages/**/*.test.ts",
+      "scripts/**/*.test.ts",
+      "infra/**/*.test.ts",
+    ],
     environment: "node",
   },
 });

@@ -1,3 +1,4 @@
+import { Storage } from "./src/storage.ts";
 import { App, Stack, aws_lambda as lambda } from "aws-cdk-lib";
 import { NodejsFunction, OutputFormat } from "aws-cdk-lib/aws-lambda-nodejs";
 import { mkdirSync, mkdtempSync, readdirSync, copyFileSync, writeFileSync } from "node:fs";
@@ -10,6 +11,7 @@ const app = new App({ outdir });
 const stack = new Stack(app, "ToolchainFixture", {
   env: { account: "111111111111", region: "eu-central-1" },
 });
+new Storage(stack, "Storage", { environment: "dev", disposable: true });
 new NodejsFunction(stack, "Boundary", {
   entry: "apps/api/src/handler.ts",
   handler: "handler",
