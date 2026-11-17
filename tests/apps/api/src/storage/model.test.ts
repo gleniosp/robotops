@@ -1,6 +1,11 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vite-plus/test";
-import { decodeRecord, keys, UnsupportedRecordVersion, workDue } from "./model.ts";
+import {
+  decodeRecord,
+  keys,
+  UnsupportedRecordVersion,
+  workDue,
+} from "../../../../../apps/api/src/storage/model.ts";
 const tenant = "01ARZ3NDEKTSV4RRFFQ69G5FAV";
 const run = "01ARZ3NDEKTSV4RRFFQ69G5FAW";
 describe("storage boundaries", () => {

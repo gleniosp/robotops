@@ -2,7 +2,7 @@ import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, test } from "vite-plus/test";
-import { checkDocs } from "./check-docs.ts";
+import { checkDocs } from "../../scripts/check-docs.ts";
 
 test("rejects missing local and reference targets and ignores external links and anchors", () => {
   const root = mkdtempSync(join(tmpdir(), "robotops-docs-"));

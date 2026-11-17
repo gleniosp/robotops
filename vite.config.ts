@@ -4,15 +4,12 @@ export default defineConfig({
   fmt: { ignorePatterns: ["**/*.{md,json,jsonc,yaml,yml,toml}"] },
   lint: {
     options: { typeAware: true, typeCheck: true },
-    overrides: [{ files: ["apps/api/**", "infra/cdk/**", "scripts/**"], env: { node: true } }],
+    overrides: [
+      { files: ["apps/api/**", "infra/cdk/**", "scripts/**", "tests/**"], env: { node: true } },
+    ],
   },
   test: {
-    include: [
-      "apps/**/*.test.ts",
-      "packages/**/*.test.ts",
-      "scripts/**/*.test.ts",
-      "infra/**/*.test.ts",
-    ],
+    include: ["tests/**/*.test.ts"],
     environment: "node",
   },
 });

@@ -18,7 +18,7 @@ resolutions to bypass this policy.
 This is a pnpm monorepo with a shared root `vite.config.ts`. The current example
 spans `packages/contracts`, `apps/api`, and `infra/cdk`.
 The API consumes the shared schema; CDK packages the API boundary, and
-[the bundle verifier](../../tests/toolchain/README.md) invokes its output.
+[the bundle verifier](../../tests/README.md) invokes its output.
 Product behavior remains planned. Follow the [Vite+ monorepo guide](https://viteplus.dev/guide/monorepo):
 package overrides belong in the shared root Vite+ configuration; CDK owns Lambda packaging. Vite+ is development
 tooling and must stay out of runtime bundles.

@@ -4,11 +4,11 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "check": "vp check && dprint check && pnpm run typecheck && pnpm run docs:check && prek validate-config prek.toml",
+    "check": "vp check && dprint check && pnpm run typecheck && pnpm run docs:check && pnpm run tests:layout && prek validate-config prek.toml",
     "fix": "pnpm run format && vp check --fix --no-fmt",
     "test": "vp test run",
     "toolchain:bundle": "node infra/cdk/synth.ts",
-    "toolchain:import": "node tests/toolchain/import.ts",
+    "toolchain:import": "node tests/infra/cdk/bundle-import.ts",
     "format": "vp fmt && dprint fmt",
     "format:check": "vp fmt --check && dprint check",
     "lint": "vp lint",
@@ -17,7 +17,8 @@
     "security:dependencies": "pnpm audit --audit-level=high",
     "hooks:check": "prek run --all-files --stage manual",
     "hooks:install": "prek install",
-    "hooks:fix": "prek run --all-files --stage pre-commit"
+    "hooks:fix": "prek run --all-files --stage pre-commit",
+    "tests:layout": "node scripts/check-test-layout.ts"
   },
   "dependencies": {
     "effect": "4.1.2"

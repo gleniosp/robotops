@@ -21,7 +21,7 @@ import {
   relativeTimeMicros,
   routes,
   sampleCount,
-} from "./index.ts";
+} from "../../../../packages/contracts/src/index.ts";
 
 const id = "01ARZ3NDEKTSV4RRFFQ69G5FAV";
 const configuration = { jointPositionRad: [0, 0, 0, 0, 0, 0] };
@@ -223,7 +223,9 @@ describe("strict version 1 contracts", () => {
   });
 
   it("keeps contracts independent of entry points, infrastructure and Node runtime imports", () => {
-    const directory = fileURLToPath(new URL(".", import.meta.url));
+    const directory = fileURLToPath(
+      new URL("../../../../packages/contracts/src/", import.meta.url),
+    );
     for (const file of readdirSync(directory).filter(
       (file) => file.endsWith(".ts") && !file.endsWith(".test.ts"),
     )) {

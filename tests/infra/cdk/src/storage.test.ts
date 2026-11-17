@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vite-plus/test";
 import { App, Stack } from "aws-cdk-lib";
 import { Template, Match } from "aws-cdk-lib/assertions";
-import { Storage } from "./storage.ts";
+import { Storage } from "../../../../infra/cdk/src/storage.ts";
 
 describe("storage synthesis", () => {
   it("secures state and exposes only scoped policies", () => {

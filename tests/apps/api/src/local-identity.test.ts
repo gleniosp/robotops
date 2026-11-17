@@ -1,8 +1,8 @@
 import { generateKeyPairSync, sign } from "node:crypto";
 import { expect, test, vi } from "vite-plus/test";
 import { Effect } from "effect";
-import { IdentityService } from "./authorization.ts";
-import { createLocalIdentity, verifyLocalToken } from "./local-identity.ts";
+import { IdentityService } from "../../../../apps/api/src/authorization.ts";
+import { createLocalIdentity, verifyLocalToken } from "../../../../apps/api/src/local-identity.ts";
 
 const config = {
   mode: "local",
@@ -88,7 +88,7 @@ test("production and AWS environments reject local keys", async () => {
 test("verified local identity still requires server-side membership", async () => {
   const { Layer } = await import("effect");
   const { authorizationLayer, inMemoryMembershipLayer, withAuthorization } =
-    await import("./authorization.ts");
+    await import("../../../../apps/api/src/authorization.ts");
   const local = await Effect.runPromise(createLocalIdentity("local", config));
   const dependencies = Layer.merge(
     local.layer,
