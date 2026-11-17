@@ -1,5 +1,6 @@
 # Glossary
 
+- **Authorization:** checking a verified subject’s active tenant membership, role capability and resource ownership before an operation.
 - **Contract:** a runtime schema and inferred type shared across component boundaries.
 - **Effect boundary:** input validation and explicit failure handling at the edge of an operation.
 - **Layer:** Effect's way to construct and provide service dependencies.

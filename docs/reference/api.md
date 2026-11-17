@@ -60,5 +60,6 @@ for a denied action in a known authorized workspace. Responses use Cache-Control
 no-store. Request bodies are capped at 64 KiB before decoding. Downloads contain
 an HTTPS URL, expiresAt and public artifact metadata; future signing limits links
 to 60 seconds and the winning artifact. Public responses exclude leases and keys.
-Authentication, authorization, byte limits, header behavior and link expiry require
+The [authorization services](../guides/authorization.md) implement the policy
+boundary for future handlers. Authentication, byte limits, header behavior and link expiry require
 transport/service enforcement; schemas alone do not implement them.

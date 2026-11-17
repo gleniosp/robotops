@@ -4,6 +4,7 @@
 - Update affected docs with every task; remove obsolete guidance and irrelevant history.
 - Make the main README and guides/ the first reading path for newcomers. Link the relevant guide prominently from the main README and docs/README.md.
 - Write guides as practical, plain-language walkthroughs of what people can do today. Explain the purpose of each step and its expected result; link technical references and ADRs for deeper detail.
+- Use docs/guides/ for walkthroughs, how-to instructions and supporting explanations; do not create separate explanation/ or how-to/ folders. Keep technical references in reference/ and decisions in adr/.
 - Extend affected guides as capabilities are implemented. Add focused guides when a new workflow needs one; do not describe planned functionality as available or duplicate technical reference details.
 - Use concise, complete, natural language. Explain technical details only when readers need them.
 - Give each topic one canonical home. Link to that home instead of repeating explanations, commands, or policies across files or within a file.
