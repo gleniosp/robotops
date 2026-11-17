@@ -5,8 +5,10 @@ it can break a client or make an older saved dataset unreadable, even when the
 TypeScript compiler passes. Use this guide whenever a shared schema changes.
 
 Today the API uses `/v1`, and telemetry samples, artifact metadata and manifests
-use `schemaVersion: "1"`. Only these initial schemas exist. There are no migration
-runners, older-version readers or deployed product consumers yet.
+use `schemaVersion: "1"`. Storage envelopes separately use `recordVersion: "1"`; the
+[data model](../reference/data-model.md) defines their strict reader and preserved fixtures.
+Only these initial versions exist. There are no migration runners, older-version
+readers or deployed product consumers yet.
 
 ## Decide who needs to keep working
 

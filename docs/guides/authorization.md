@@ -49,7 +49,7 @@ access. Signing keys exist only in memory, and tokens expire after five minutes.
    Supply a trusted resource loader and the operation to execute after approval.
 
 The integration test named “verified local identity still requires server-side
-membership” in `apps/api/src/local-identity.test.ts` is a complete runnable example.
+membership” in `tests/apps/api/src/local-identity.test.ts` is a complete runnable example.
 Run `pnpm test` from the repository root: the member can list robots, while a
 signed token for an outsider receives NOT_FOUND. A viewer attempting registration
 receives FORBIDDEN. Tampered or expired tokens receive UNAUTHENTICATED.

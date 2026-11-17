@@ -12,7 +12,7 @@ import {
   withAuthorization,
   type Action,
   type OwnedResource,
-} from "./authorization.ts";
+} from "../../../../apps/api/src/authorization.ts";
 
 const tenant: Tenant = { id: "tenant-a", name: "A", status: "ACTIVE" };
 const membership: UserMembership = {

@@ -1,0 +1,79 @@
+[
+  {
+    "recordVersion": "1",
+    "kind": "membership",
+    "data": {
+      "sub": "user",
+      "tenantId": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+      "role": "viewer",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "recordVersion": "1",
+    "kind": "robot",
+    "data": {
+      "id": "01ARZ3NDEKTSV4RRFFQ69G5FAW",
+      "tenantId": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+      "name": "Fixture",
+      "model": "simulated-arm-v1",
+      "configuration": {
+        "jointPositionRad": [0, 0, 0, 0, 0, 0]
+      },
+      "status": "ACTIVE",
+      "createdAt": "2026-11-17T00:00:00.000Z"
+    }
+  },
+  {
+    "recordVersion": "1",
+    "kind": "run",
+    "data": {
+      "public": {
+        "id": "01ARZ3NDEKTSV4RRFFQ69G5FAW",
+        "tenantId": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        "robotId": "01ARZ3NDEKTSV4RRFFQ69G5FAW",
+        "configuration": {
+          "jointPositionRad": [0, 0, 0, 0, 0, 0]
+        },
+        "parameters": {
+          "durationSeconds": 1,
+          "sampleRateHz": 1,
+          "seed": 0,
+          "simulatorVersion": "simulated-arm-v1"
+        },
+        "createdAt": "2026-11-17T00:00:00.000Z",
+        "updatedAt": "2026-11-17T00:00:00.000Z",
+        "status": "QUEUED"
+      },
+      "attempt": 0,
+      "fence": 0
+    }
+  },
+  {
+    "recordVersion": "1",
+    "kind": "dispatch",
+    "data": {
+      "tenantId": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+      "runId": "01ARZ3NDEKTSV4RRFFQ69G5FAW",
+      "dueAt": "2026-11-17T00:00:00.000Z",
+      "sendCount": 0,
+      "recoveryReason": "INITIAL"
+    }
+  },
+  {
+    "recordVersion": "1",
+    "kind": "idempotency",
+    "data": {
+      "tenantId": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+      "sub": "user",
+      "route": "POST /v1/simulations",
+      "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "runId": "01ARZ3NDEKTSV4RRFFQ69G5FAW",
+      "expiresAt": 1794873600,
+      "response": {
+        "statusCode": 202,
+        "runId": "01ARZ3NDEKTSV4RRFFQ69G5FAW"
+      }
+    }
+  }
+]

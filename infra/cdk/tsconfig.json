@@ -3,6 +3,6 @@
   "compilerOptions": {
     "exactOptionalPropertyTypes": false
   },
-  "include": ["synth.ts"],
+  "include": ["synth.ts", "src/**/*.ts"],
   "exclude": []
 }

@@ -10,13 +10,13 @@ simulation workloads, and collecting telemetry datasets. It is a learning and
 portfolio project around cloud infrastructure, distributed systems, and robotics data.
 
 Start with [Getting started with RobotOps](docs/guides/getting-started.md) to try
-what works today and find a way to contribute. Use the
+what works today and find a way to contribute. Read [the storage guide](docs/guides/storage.md) for an introduction to database records and result files. Use the
 [documentation map](docs/README.md) for technical references and decisions.
 
 ## Current state
 
 The repository provides a development foundation: local checks, boundary tests,
-a Lambda bundling example, [shared R1 contracts](packages/contracts/README.md), and
+a Lambda bundling example, [shared R1 contracts](packages/contracts/README.md), [storage resource synthesis](docs/reference/data-model.md), and
 [authorization services with local test identity](docs/guides/authorization.md). Robot registration, simulation services, login,
 and cloud deployment are planned. The [roadmap](https://github.com/gleniosp/robotops/issues/2)
 owns delivery order and release criteria; [milestones](https://github.com/gleniosp/robotops/milestones)

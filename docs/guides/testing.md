@@ -16,7 +16,7 @@ configuration formatting, strict TypeScript checks for all workspaces, and local
 Markdown file links. It also validates the prek configuration. Link anchors and
 remote URLs are not checked. Tests run once. CDK synthesizes and bundles the
 example without AWS credentials; the import command runs
-`tests/toolchain/import.ts` against the resulting bundle.
+`tests/infra/cdk/bundle-import.ts` against the resulting bundle.
 It invokes the handler with valid and invalid inputs and checks that only Node
 built-ins remain external and that development tools are absent. CI runs this
 integration check after synthesis; `pnpm test` runs the source unit tests.
@@ -64,3 +64,21 @@ credentials are required.
 Fork PRs use the same pull_request event; a maintainer may need to approve their
 first run. Check failures in Actions logs. Hosted fork behavior and required
 branch protection must be confirmed by the maintainer when the PR is published.
+
+## Where tests belong
+
+Put all tests under `tests/`, mirroring the source path from the repository root.
+For example, `apps/api/src/storage/model.ts` has its tests in
+`tests/apps/api/src/storage/model.test.ts`. Keep test-only fixtures beside the
+tests, and import production modules through their public exports or explicit
+relative paths. Do not place tests alongside production source files.
+
+Vite+ discovers `tests/**/*.test.ts`. Use that suffix for runner tests. Standalone
+integration checks also belong under the matching source subtree; the bundle
+verifier lives at `tests/infra/cdk/bundle-import.ts` and keeps its separate command.
+The `tests` workspace declares its own dependencies. Its TypeScript checks include
+all tests, with the CDK exception scoped to `tests/infra/cdk`.
+
+`pnpm run tests:layout` rejects `.test.*` and `.spec.*` files outside `tests/`.
+It runs as part of `pnpm run check` and therefore in CI. Add new test configuration
+in the shared root Vite+ configuration, following the existing monorepo convention.

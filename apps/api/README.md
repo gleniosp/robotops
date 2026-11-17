@@ -10,3 +10,7 @@ See [checks](../../docs/guides/testing.md) for validation and bundle commands.
 plus a wrapper for future protected handlers. `src/local-identity.ts` supplies an
 ephemeral local signed-token issuer. See [authorization](../../docs/guides/authorization.md)
 for the route matrix, composition requirements and local trust boundary.
+
+`src/storage/model.ts` provides validated key builders and storage record v1 decoding
+for future adapters; it performs no database operations. See the
+[data model](../../docs/reference/data-model.md).
