@@ -13,5 +13,6 @@ For more detail:
 - [Development toolchain decision](adr/01-development-toolchain.md): why the current tools were chosen.
 - [API contracts](reference/api.md), [domain](reference/domain.md), and [telemetry](reference/telemetry.md): shared runtime schemas.
 - [Shared contracts decision](adr/02-shared-api-contracts.md): validation and dependency boundaries.
+- [Authorization](guides/authorization.md): policy matrix and local identity trust boundary.
 - [Glossary](reference/glossary.md): shared terms in alphabetical order.
 - [Working agreement](working-agreement.md): how maintainers and agents deliver tasks.

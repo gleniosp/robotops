@@ -16,7 +16,8 @@ what works today and find a way to contribute. Use the
 ## Current state
 
 The repository provides a development foundation: local checks, boundary tests,
-a Lambda bundling example, and [shared R1 contracts](packages/contracts/README.md). Robot registration, simulation services, login,
+a Lambda bundling example, [shared R1 contracts](packages/contracts/README.md), and
+[authorization services with local test identity](docs/guides/authorization.md). Robot registration, simulation services, login,
 and cloud deployment are planned. The [roadmap](https://github.com/gleniosp/robotops/issues/2)
 owns delivery order and release criteria; [milestones](https://github.com/gleniosp/robotops/milestones)
 track progress.
